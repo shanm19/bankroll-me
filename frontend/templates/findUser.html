@@ -1,0 +1,53 @@
+<div class="container-fluid" ng-repeat="foundUser in foundUsers track by $index">
+    <div class="row">
+        <!-- Left side of page -->
+        <div class="col-sm-2 text-xs-center m-t-3">
+            <br><br>
+            <button type="button" class="btn btn-outline-info" ng-click="addFriend(foundUser)">Add Friend</button>
+
+        </div>
+        <!-- Center Page -->
+        <div class="col-sm-8 m-x-3" style="background-color: white; min-height: 1000px;">
+            <br><br>
+            <h1 class="text-xs-center m-b-3">{{foundUser.firstName}} {{foundUser.lastName}}</h1>
+
+            <!-- List of Desires -->
+            <div class="row card-block">
+                <h1>Wants</h1>
+                <div ng-repeat="want in foundUser.wants track by $index">
+                    <div class="col-sm-4 card">
+                        <div class="card-block">
+                            <h5 class="card-title">{{want.name}} | ${{want.cost}}</h5>
+                            <p class="card-text">Pledged: ${{want.moneyPledged}}</p>
+                            <p class="card-text">Bought: {{want.bought}}</p>
+                            <p class="card-text">Description: {{want.description}}</p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <div class="row card-block">
+                <h1>Needs</h1>
+                <br>
+                <div ng-repeat="need in foundUser.needs track by $index">
+                    <div class="col-sm-4 card">
+                        <div class="card-block">
+                            <h5 class="card-title">{{need.name}} | ${{need.cost}}</h5>
+                            <p class="card-text">Pledged: ${{need.moneyPledged}}</p>
+                            <p class="card-text">Bought: {{need.bought}}</p>
+                            <p class="card-text">Description: {{need.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- Right side of page -->
+        <div class="col-sm-2">
+
+        </div>
+    </div>
+    <br>
+</div>
